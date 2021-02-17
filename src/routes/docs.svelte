@@ -13,7 +13,7 @@
 
 <script>
   import { onMount } from "svelte"
-  import { initHighlightJs } from "../docs-generation/utils"
+  import { initHighlightJs } from "../utils"
   import editIcon from '../assets/edit-icon.svg'
 
   export let htmlContent
@@ -123,7 +123,6 @@
 <svelte:head>
 	<title>Docs • Restapify</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/zenburn.min.css" integrity="sha512-JPxjD2t82edI35nXydY/erE9jVPpqxEJ++6nYEoZEpX2TRsmp2FpZuQqZa+wBCen5U16QZOkMadGXHCfp+tUdg==" crossorigin="anonymous" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js" integrity="sha512-zol3kFQ5tnYhL7PzGt0LnllHHVWRGt2bTCIywDiScVvLIlaDOVJ6sPdJTVi0m3rA660RT+yZxkkRzMbb1L8Zkw==" crossorigin="anonymous"></script>
 </svelte:head>
 
 <div class="d-flex" id="wrapper">
