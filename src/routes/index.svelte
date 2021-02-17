@@ -1,3 +1,8 @@
+<script>
+	import Header from '../components/Header.svelte'
+	import Features from '../components/Features.svelte'
+</script>
+
 <style>
 	h1, figure, p {
 		text-align: center;
@@ -25,15 +30,18 @@
 		margin: 1em auto;
 	}
 
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
+	#home {
+		height: 100%;
+		overflow: auto;
 	}
 </style>
 
 <svelte:head>
 	<title>Restapify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/monokai-sublime.min.css" integrity="sha512-/l4iViNMhxR5MhSlak3Yw/L/7qUBifVy7MpLjeJTc8BPMRFbGplGN0xqufCDwhSdxSnVgy+e/OYsNnU75K3yyQ==" crossorigin="anonymous" />
 </svelte:head>
 
-<h1>Great success!</h1>
+<div id="home">
+	<Header />
+	<Features />
+</div>
