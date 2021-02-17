@@ -39,18 +39,7 @@
 <style lang="scss">
 	#wrapper {
     height: 100%;
-    
-    :global(*:not(pre) > code) {
-      color: white!important;
-      padding: .2em .4em;
-      font-size: 80%;
-      background-color: #3F3F3F;
-      border-radius: .25rem;
-      white-space: nowrap;
-    }
 	}
-
-
 
   #sidebar {
     min-width: 20vw;
@@ -97,6 +86,12 @@
 		overflow: auto;
 		scroll-behavior: smooth;
     max-width: 70vw;
+
+    a.btn:hover {
+      img {
+        filter: invert(100%);
+      }
+    }
 
     :global(h2:not(:first-of-type)) {
       margin-top: 40vh;

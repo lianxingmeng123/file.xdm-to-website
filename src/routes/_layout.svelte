@@ -12,6 +12,14 @@
 		flex-grow: 1;
 		width: 100%;
 	}
+	:global(*:not(pre) > code) {
+		color: white!important;
+		padding: .2em .4em;
+		font-size: 80%;
+		background-color: #3F3F3F;
+		border-radius: .25rem;
+		white-space: nowrap;
+	}
 </style>
 
 <Nav />
