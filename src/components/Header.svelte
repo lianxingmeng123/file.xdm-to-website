@@ -56,7 +56,7 @@
               },
               { 
                 type: 'file', 
-                name: '*.404.{ERR}.json',
+                name: '*.404.{NOT_FOUND}.json',
                 content: [null],
               },
               { 
