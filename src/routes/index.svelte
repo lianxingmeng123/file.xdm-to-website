@@ -38,7 +38,7 @@
 
 <svelte:head>
 	<title>Restapify</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/monokai-sublime.min.css" integrity="sha512-/l4iViNMhxR5MhSlak3Yw/L/7qUBifVy7MpLjeJTc8BPMRFbGplGN0xqufCDwhSdxSnVgy+e/OYsNnU75K3yyQ==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/vs2015.min.css" integrity="sha512-w8aclkBlN3Ha08SMwFKXFJqhSUx2qlvTBFLLelF8sm4xQnlg64qmGB/A6pBIKy0W8Bo51yDMDtQiPLNRq1WMcQ==" crossorigin="anonymous" />
 </svelte:head>
 
 <div id="home">
