@@ -19,9 +19,9 @@
 
 	ul {
 		padding: 0.2em 0 0 0.5em;
-		margin: 0 0 0 0.5em;
+		margin: 0 0 0 0.4em;
 		list-style: none;
-		border-left: 1px solid #eee;
+		border-left: 2px solid #eee;
 	}
 
 	li {
