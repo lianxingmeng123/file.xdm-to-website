@@ -18,21 +18,28 @@
     overflow: hidden;
 
     .editor-toolbar {
+      border: solid 1px #1E1E1E;
+      border-radius: 5px 5px 0 0; 
+
       div {
         height: 12px;
         width: 12px;
       }
     }
+
+    code {
+      border-radius: 0 0 5px 5px;
+    }
   }
 </style>
 
-<div class="editor d-flex flex-column ms-4 mt-2 rounded-3">
+<div class="editor d-flex flex-column ms-4 mt-2">
   <div class="editor-toolbar d-flex ps-2 py-1 bg-light">
     <div class="rounded-circle mx-1 bg-danger"> </div>
     <div class="rounded-circle mx-1 bg-warning"> </div>
     <div class="rounded-circle mx-1 bg-success"> </div>
   </div>
   <pre>
-    <code class={`${language} rounded-3 p-3`}>{content}</code>
+    <code class={`${language} p-3`}>{content}</code>
   </pre>
 </div>

@@ -12,6 +12,7 @@
 
 <style>
 	span {
+		color: black;
 		background-size: 1em 1em;
 		font-weight: bold;
 		cursor: pointer;
@@ -21,7 +22,7 @@
 		padding: 0.2em 0 0 0.5em;
 		margin: 0 0 0 0.4em;
 		list-style: none;
-		border-left: 2px solid #eee;
+		border-left: 2px solid #D6EBF4;
 	}
 
 	li {
