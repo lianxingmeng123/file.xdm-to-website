@@ -1,5 +1,6 @@
 <script>
 	import File from './File.svelte';
+	import Icon from './Icon/Icon.svelte';
 
 	export let expanded = false;
 	export let name;
@@ -22,7 +23,7 @@
 		padding: 0.2em 0 0 0.5em;
 		margin: 0 0 0 0.4em;
 		list-style: none;
-		border-left: 2px solid #D6EBF4;
+		border-left: 2px solid black;
 	}
 
 	li {
@@ -30,7 +31,10 @@
 	}
 </style>
 
-<span on:click={toggle} class="ps-0">📂 {name}</span>
+<span on:click={toggle} class="ps-0">
+	<Icon name={expanded ? 'folder-open' : 'folder'} />
+	{name}
+</span>
 
 {#if expanded}
 	<ul>

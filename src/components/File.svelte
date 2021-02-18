@@ -2,6 +2,7 @@
   import { onMount } from "svelte"
   import { initHighlightJs } from "../utils"
   import Terminal from './Terminal.svelte'
+	import Icon from './Icon/Icon.svelte';
 
   import arrowIcon from '../assets/arrow-90deg-down.svg'
 
@@ -37,7 +38,7 @@
 </style>
 
 <span on:click={toggle} class="ps-0">
-  📜 {name}
+  <Icon name="file-code" /> {name}
   <img 
     src={arrowIcon} 
     alt="File content indicator"
