@@ -3,6 +3,7 @@
   import { initHighlightJs } from "../utils"
 
   import Folder from './Folder.svelte'
+  import ApiOverview from "./ApiOverview/ApiOverview.svelte";
 
   	let root = [
       {
@@ -119,18 +120,34 @@
   })
 </script>
 
-<style>
-  #filesTree {
-    color: #dcdcdc;
-    background-color: #3f3f3f;
+<style lang="scss">
+  header {
+    .api-overview {
+      height: 100%;
+      overflow: auto;
+    }
+
+    #filesTree :global(img) {
+      width: 1.3em!important;
+    }
   }
 </style>
 
-<header class="container">
+<header class="px-3 d-flex flex-column">
   <h1 class="text-center px-5">
     Quickly and easily deploy a mocked REST API
   </h1>
-  <div id="filesTree" class="row p-3">
-    <Folder name="mockedApi" files={root} expanded/>
+  <div class="row">
+    <div id="filesTree" class="col p-3">
+      <Folder name="mockedApi" files={root} expanded/>
+    </div>
+    <div class="col-3">
+      <pre class="d-inline-block rounded-3">
+        <code>$ restapify serve mockedApi/</code>
+      </pre>
+    </div>
+    <div class="col api-overview">
+      <ApiOverview />
+    </div>
   </div>
 </header>
