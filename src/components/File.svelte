@@ -50,5 +50,5 @@
 </button>
 
 <div class:d-none={!expended} class="mt-4">
-  <Terminal content={JSON.stringify(content, null, content[0] !== null ? 2 : 0)} language="json" />
+  <Terminal class="ms-4 mt-2" content={JSON.stringify(content, null, content[0] !== null ? 2 : 0)} language="json" />
 </div>

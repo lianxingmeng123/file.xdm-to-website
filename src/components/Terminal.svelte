@@ -1,6 +1,10 @@
 <script lang="ts">
   export let content: string
   export let language: string = ''
+
+  let className = ''
+
+  export {className as class}
 </script>
 
 <style lang="scss">
@@ -24,6 +28,7 @@
       div {
         height: 12px;
         width: 12px;
+        border: solid 1px #1E1E1E;
       }
     }
 
@@ -33,7 +38,7 @@
   }
 </style>
 
-<div class="editor d-flex flex-column ms-4 mt-2">
+<div class={`editor d-flex flex-column ${className}`}>
   <div class="editor-toolbar d-flex ps-2 py-1 bg-light">
     <div class="rounded-circle mx-1 bg-danger"> </div>
     <div class="rounded-circle mx-1 bg-warning"> </div>

@@ -2,8 +2,12 @@
   import { onMount } from "svelte"
   import { initHighlightJs } from "../utils"
 
+  import bg from '../assets/restapify-icon-bg.svg'
+
   import Folder from './Folder.svelte'
   import ApiOverview from "./ApiOverview/ApiOverview.svelte";
+import Terminal from "./Terminal.svelte";
+import Icon from "./Icon/Icon.svelte";
 
   	let root = [
       {
@@ -122,31 +126,71 @@
 
 <style lang="scss">
   header {
+    position: relative;
+    min-height: 80vh;
+
+    #bg {
+      position: absolute;
+      top: -20%;
+      left: -20%;
+      width: 120%;
+      opacity: .3;
+      z-index: -1;
+    }
+
+    #arrowSeparator :global(.icon) {
+      width: 2.5em;
+    }
+
     .api-overview {
       height: 100%;
+      overflow: auto;
+    }
+
+    #filesTree {
+      height: 80vh;
       overflow: auto;
     }
 
     #filesTree :global(img) {
       width: 1.3em!important;
     }
+
+    @media (max-width: 768px) { 
+      overflow-x: hidden;
+
+      #bg {
+        top: -5%;
+        left: -50%;
+        height: 100vh;
+        width: auto;
+      }
+
+      #arrowSeparator {
+        transform: rotate(90deg);
+        margin: 1em 0;
+      }
+    }
   }
 </style>
 
 <header class="px-3 d-flex flex-column">
-  <h1 class="text-center px-5">
+  <img src={bg} id="bg" alt="Design colors" />
+  <h1 class="text-center mt-5 px-2 px-md-5">
     Quickly and easily deploy a mocked REST API
   </h1>
-  <div class="row">
-    <div id="filesTree" class="col p-3">
+  <p class="text-center lh-sm">Save time on the development of your Frontend project by avoiding wasting it on the API mocking.</p>
+  <Terminal class="m-auto" content={`$ yarn global add restapify 
+# or npm install -g restapify
+$ restapify serve mockedApi/`} language="bash"/>
+  <div class="row justify-content-center">
+    <div id="filesTree" class="col-11 col-md-5 col-lg-4 p-3 bg-light border border-dark rounded-3">
       <Folder name="mockedApi" files={root} expanded/>
     </div>
-    <div class="col-3">
-      <pre class="d-inline-block rounded-3">
-        <code>$ restapify serve mockedApi/</code>
-      </pre>
+    <div id="arrowSeparator" class="col-12 col-md-1 align-self-center d-flex justify-content-center">
+      <Icon name='arrow-right' />
     </div>
-    <div class="col api-overview">
+    <div class="col-11 col-md-5 col-lg-4 p-0 api-overview">
       <ApiOverview />
     </div>
   </div>

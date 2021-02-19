@@ -6,8 +6,14 @@
   export let response
 </script>
 
+<style>
+  .request {
+    font-size: .8em;
+  }
+</style>
+
 <div class="d-flex flex-column align-items-center">
-  <pre class="mb-0"><code class="text rounded-3">{request}</code></pre>
+  <pre class="mb-0"><code class="text rounded-3 request">{request}</code></pre>
   <Icon name="arrow-bar-bottom" />
 </div>
 
