@@ -29,7 +29,7 @@
 
 <div class="row mx-4">
   {#each FEATURES as feature}
-    <div class="col-md-4 px-4 mb-5">
+    <div class="col-md-4 px-1 px-md-4 mb-1 mb-md-5">
       <h3 class="mb-3 fs-4">{feature.title}</h3>
       <p class="grey-text mb-md-0 mb-5 lh-sm">{@html feature.description}</p>
     </div>

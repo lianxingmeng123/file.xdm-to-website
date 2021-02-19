@@ -46,6 +46,7 @@
 	<Header />
 	<section class="container my-5 py-5">
 		<Features />
+		<hr />
 		<GettingStarted />
 	</section>
 </div>
