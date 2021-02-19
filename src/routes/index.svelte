@@ -1,6 +1,7 @@
 <script>
 	import Header from '../components/Header.svelte'
 	import Features from '../components/Features.svelte'
+	import GettingStarted from '../components/GettingStarted.svelte'
 </script>
 
 <style>
@@ -43,5 +44,8 @@
 
 <div id="home">
 	<Header />
-	<Features />
+	<section class="container my-5 py-5">
+		<Features />
+		<GettingStarted />
+	</section>
 </div>

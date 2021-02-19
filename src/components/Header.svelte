@@ -136,7 +136,7 @@
 
     #bg {
       position: absolute;
-      top: -20%;
+      top: -10%;
       left: -20%;
       width: 120%;
       opacity: .3;
