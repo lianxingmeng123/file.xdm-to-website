@@ -2,7 +2,7 @@
   const FEATURES = [
     {
       title: '💡 Incredible DX',
-      description: 'Intuitive files structure and JSON syntax'
+      description: 'Intuitive files structure and JSON syntax to cover all the scenarios of your future API'
     },
     {
       title: '✅ JSON valid',
@@ -27,17 +27,11 @@
   ]
 </script>
 
-<section class="container my-5 py-5">
-  <div class="row mx-4">
-
-    {#each FEATURES as feature}
-      <div class="col-md-4 px-4 mb-5">
-        <h3 class="mb-3 fs-4">{feature.title}</h3>
-        <p class="grey-text mb-md-0 mb-5 lh-sm">{@html feature.description}</p>
-      </div>
-    {/each}
-
-    
-
-  </div>
-</section>
+<div class="row mx-4">
+  {#each FEATURES as feature}
+    <div class="col-md-4 px-4 mb-5">
+      <h3 class="mb-3 fs-4">{feature.title}</h3>
+      <p class="grey-text mb-md-0 mb-5 lh-sm">{@html feature.description}</p>
+    </div>
+  {/each}
+</div>

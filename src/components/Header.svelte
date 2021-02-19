@@ -6,14 +6,13 @@
 
   import Folder from './Folder.svelte'
   import ApiOverview from "./ApiOverview/ApiOverview.svelte";
-import Terminal from "./Terminal.svelte";
-import Icon from "./Icon/Icon.svelte";
+  import Terminal from "./Terminal.svelte";
+  import Icon from "./Icon/Icon.svelte";
 
   	let root = [
       {
         type: 'folder',
         name: 'posts',
-        expanded: true,
         files: [
           { 
             type: 'file', 
@@ -33,6 +32,7 @@ import Icon from "./Icon/Icon.svelte";
       {
         type: 'folder',
         name: 'users',
+        expanded: true,
         files: [
           { 
             type: 'file', 
@@ -49,6 +49,7 @@ import Icon from "./Icon/Icon.svelte";
           {
             type: 'folder',
             name: '[userid]',
+            expanded: true,
             files: [
               { 
                 type: 'file', 
@@ -129,6 +130,10 @@ import Icon from "./Icon/Icon.svelte";
     position: relative;
     min-height: 80vh;
 
+    h1 {
+      margin-top: 10vh
+    }
+
     #bg {
       position: absolute;
       top: -20%;
@@ -176,21 +181,27 @@ import Icon from "./Icon/Icon.svelte";
 
 <header class="px-3 d-flex flex-column">
   <img src={bg} id="bg" alt="Design colors" />
-  <h1 class="text-center mt-5 px-2 px-md-5">
+  <h1 class="text-center px-2 px-md-5">
     Quickly and easily deploy a mocked REST API
   </h1>
-  <p class="text-center lh-sm">Save time on the development of your Frontend project by avoiding wasting it on the API mocking.</p>
-  <Terminal class="m-auto" content={`$ yarn global add restapify 
+  <p class="text-center fs-5 lh-sm">Save time on the development of your Frontend project by avoiding wasting it on the API mocking.</p>
+  <Terminal class="mx-auto mt-5" content={`$ yarn global add restapify 
 # or npm install -g restapify
 $ restapify serve mockedApi/`} language="bash"/>
-  <div class="row justify-content-center">
-    <div id="filesTree" class="col-11 col-md-5 col-lg-4 p-3 bg-light border border-dark rounded-3">
-      <Folder name="mockedApi" files={root} expanded/>
+  <div class="row justify-content-center mt-5">
+    <div class="col-11 col-md-5 col-lg-4">
+      <h3>#1 Define routes
+        <a href="/docs" class="fs-6 text-decoration-none">[docs]</a>
+      </h3>
+      <div id="filesTree" class="p-3 bg-light border border-dark rounded-3">
+        <Folder name="mockedApi" files={root} expanded/>
+      </div>
     </div>
     <div id="arrowSeparator" class="col-12 col-md-1 align-self-center d-flex justify-content-center">
       <Icon name='arrow-right' />
     </div>
     <div class="col-11 col-md-5 col-lg-4 p-0 api-overview">
+      <h3>#2 Consume the API</h3>
       <ApiOverview />
     </div>
   </div>

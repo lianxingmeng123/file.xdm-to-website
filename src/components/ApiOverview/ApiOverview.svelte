@@ -40,7 +40,7 @@
   />
   </Route>
 
-  <Route open method="GET" slug="/posts">
+  <Route method="GET" slug="/posts">
     <RouteBody
       request="GET http://localhost:6767/api/posts"
       response={stringify([
