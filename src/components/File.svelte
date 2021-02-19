@@ -40,6 +40,7 @@
 </style>
 
 <button on:click={toggle} class="ps-0">
+  <Icon name="file-earmark-text" /> {name}
   <img 
     src={arrowIcon} 
     alt="File content indicator"
