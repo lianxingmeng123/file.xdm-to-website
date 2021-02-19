@@ -12,7 +12,9 @@
 </script>
 
 <style>
-	span {
+	button {
+    border: none;
+    background-color: transparent;
 		color: black;
 		background-size: 1em 1em;
 		font-weight: bold;
@@ -31,10 +33,10 @@
 	}
 </style>
 
-<span on:click={toggle} class="ps-0">
+<button on:click={toggle} class="ps-0">
 	<Icon name={expanded ? 'folder-open' : 'folder'} />
 	{name}
-</span>
+</button>
 
 {#if expanded}
 	<ul>

@@ -20,7 +20,9 @@
 </script>
 
 <style lang="scss">
-	span {
+	button {
+    border: none;
+    background-color: transparent;
     position: relative;
 		padding: 0 0 0 1.5em;
 		background: 0 0.1em no-repeat;
@@ -37,15 +39,14 @@
 	}
 </style>
 
-<span on:click={toggle} class="ps-0">
-  <Icon name="file-code" /> {name}
+<button on:click={toggle} class="ps-0">
   <img 
     src={arrowIcon} 
     alt="File content indicator"
     class:d-none={!expended} 
     class="ms-3"
   />
-</span>
+</button>
 
 <div class:d-none={!expended} class="mt-4">
   <Terminal content={JSON.stringify(content, null, content[0] !== null ? 2 : 0)} language="json" />
