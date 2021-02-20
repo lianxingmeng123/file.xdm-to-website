@@ -1,3 +1,9 @@
+<script>
+	import Header from '../components/Header.svelte'
+	import Features from '../components/Features.svelte'
+	import GettingStarted from '../components/GettingStarted.svelte'
+</script>
+
 <style>
 	h1, figure, p {
 		text-align: center;
@@ -25,15 +31,22 @@
 		margin: 1em auto;
 	}
 
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
+	#home {
+		height: 100%;
+		overflow: auto;
 	}
 </style>
 
 <svelte:head>
 	<title>Restapify</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/vs2015.min.css" integrity="sha512-w8aclkBlN3Ha08SMwFKXFJqhSUx2qlvTBFLLelF8sm4xQnlg64qmGB/A6pBIKy0W8Bo51yDMDtQiPLNRq1WMcQ==" crossorigin="anonymous" />
 </svelte:head>
 
-<h1>Great success!</h1>
+<div id="home">
+	<Header />
+	<section class="container my-5 py-5">
+		<Features />
+		<hr />
+		<GettingStarted />
+	</section>
+</div>
