@@ -189,7 +189,7 @@
 # or npm install -g restapify
 $ restapify serve mockedApi/`} language="bash"/>
   <div class="row justify-content-center mt-5">
-    <div class="col-11 col-md-5 col-lg-4">
+    <div class="col-11 col-md-5 col-lg-4 p-0">
       <h3>#1 Define routes
         <a href="/docs" class="fs-6 text-decoration-none">[docs]</a>
       </h3>

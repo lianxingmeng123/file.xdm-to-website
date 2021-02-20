@@ -115,16 +115,20 @@
     <ul class="nav nav-tabs mb-3 align-items-baseline" id="tabs-tab" role="tablist">
       <h5 class="mb-0 me-2">State:</h5>
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="tabs-default-tab" data-bs-toggle="tab" data-bs-target="#tabs-default" type="button" role="tab" aria-controls="tabs-default" aria-selected="true">Default</button>
+        <button class="nav-link active" id="tabs-default-tab" data-bs-toggle="tab" data-bs-target="#tabs-default" type="button" role="tab" aria-controls="tabs-default" aria-selected="true">
+          Default
+        </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="tabs-not-found-tab" data-bs-toggle="tab" data-bs-target="#tabs-not-found" type="button" role="tab" aria-controls="tabs-not-found" aria-selected="false">NOT_FOUND</button>
+        <button class="nav-link" id="tabs-not-found-tab" data-bs-toggle="tab" data-bs-target="#tabs-not-found" type="button" role="tab" aria-controls="tabs-not-found" aria-selected="false">
+          INV_CRED
+        </button>
       </li>
     </ul>
     <div class="tab-content" id="tabs-tabContent">
       <div class="tab-pane fade show active" id="tabs-default" role="tabpanel" aria-labelledby="tabs-default-tab">
         <p class="fw-bold mb-1">Status: 200</p>
-        <pre class="d-inline-block rounded-3">
+        <pre class="w-100 rounded-3">
           <code>{stringify({
             "id": 42,
             "email": "Betsy40@gmail.com"
@@ -150,7 +154,28 @@
     />
   </Route>
   <Route method="DELETE" slug="/users/:userid">
-    <pre><code>GET http://localhost:6767/api/posts</code></pre>
+    <ul class="nav nav-tabs mb-3 align-items-baseline" id="tabs-tab" role="tablist">
+      <h5 class="mb-0 me-2">State:</h5>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="tabs-del-user-default-tab" data-bs-toggle="tab" data-bs-target="#tabs-del-user-default" type="button" role="tab" aria-controls="tabs-del-user-default" aria-selected="true">Default</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tabs-inv-cred-tab" data-bs-toggle="tab" data-bs-target="#tabs-inv-cred" type="button" role="tab" aria-controls="tabs-inv-cred" aria-selected="false">NOT_FOUND</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="tabs-tabContent">
+      <div class="tab-pane fade show active" id="tabs-del-user-default" role="tabpanel" aria-labelledby="tabs-del-user-default-tab">
+        <p class="fw-bold mb-1">Status: 200</p>
+        <pre class="w-100 rounded-3">
+          <code>{stringify({
+            "success": true
+          })}</code>
+        </pre>
+      </div>
+      <div class="tab-pane fade" id="tabs-inv-cred" role="tabpanel" aria-labelledby="tabs-inv-cred-tab">
+        <p class="fw-bold mb-1">Status: 401</p>
+      </div>
+    </div>
   </Route>
   <Route method="GET" slug="/users/:userid/comments">
     <RouteBody 
