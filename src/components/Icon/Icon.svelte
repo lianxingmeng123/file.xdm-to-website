@@ -11,10 +11,12 @@
   import arrowBarBottom from './icons/arrowBarBottom.svg'
   import fileEarmarkText from './icons/fileEarmarkText.svg'
   import arrowRight from './icons/arrowRight.svg'
+  import x from './icons/x.svg'
+  import list from './icons/list.svg'
 
   let className = ''
 
-  type Name = 'link' | 'github' | 'circle-half' | 'close' | 'book' | 'eye' | 'folder' | 'folder-open' | 'file-code' | 'arrow-bar-bottom' | 'file-earmark-text' | 'arrow-right'
+  type Name = 'link' | 'github' | 'circle-half' | 'close' | 'book' | 'eye' | 'folder' | 'folder-open' | 'file-code' | 'arrow-bar-bottom' | 'file-earmark-text' | 'arrow-right' | 'x' | 'list'
 
   export let name: Name = 'github'
   export { className as class }
@@ -31,7 +33,9 @@
     'file-code': fileCode,
     'arrow-bar-bottom': arrowBarBottom,
     'file-earmark-text': fileEarmarkText,
-    'arrow-right': arrowRight
+    'arrow-right': arrowRight,
+    x,
+    list
   }
 </script>
 

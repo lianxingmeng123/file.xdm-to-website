@@ -14,10 +14,13 @@
 <script>
   import { onMount } from "svelte"
   import { initHighlightJs } from "../utils"
+  import Icon from '../components/Icon/Icon.svelte'
   import editIcon from '../assets/edit-icon.svg'
 
   export let htmlContent
   export let htmlContentTable
+
+  let showSidebar = true
   
   const scrollToSection = () => {
     const url = window.location.href
@@ -28,6 +31,10 @@
     if (urlContainsId) {
       document.getElementById(id.substring(1)).scrollIntoView();
     }
+  }
+
+  const toggleSidebar = () => {
+    showSidebar = !showSidebar
   }
 
   onMount(() => {
@@ -42,6 +49,7 @@
 	}
 
   #sidebar {
+    position: relative;
     min-width: 20vw;
     height: 100%;
 		overflow: auto;
@@ -85,7 +93,6 @@
     height: 100%;
 		overflow: auto;
 		scroll-behavior: smooth;
-    max-width: 70vw;
 
     a.btn:hover {
       img {
@@ -113,6 +120,23 @@
       margin: 0;
     }
   }
+
+  #toggleSidebarBtn {
+    width: fit-content;
+    z-index: 2;
+  }
+
+  #toggleSidebarBtn :global(img),
+  #closeSidebarBtn :global(img) {
+    width: 1.5em;
+  }
+
+  @media (max-width: 768px) { 
+    #sidebar {
+      position: absolute;
+      z-index: 1;
+    }
+  }
 </style>
 
 <svelte:head>
@@ -120,11 +144,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/zenburn.min.css" integrity="sha512-JPxjD2t82edI35nXydY/erE9jVPpqxEJ++6nYEoZEpX2TRsmp2FpZuQqZa+wBCen5U16QZOkMadGXHCfp+tUdg==" crossorigin="anonymous" />
 </svelte:head>
 
-<div class="d-flex" id="wrapper">
-	<div id="sidebar" class="border-end">
+<div class="row" id="wrapper">
+	<div id="sidebar" class="bg-light col-11 col-md-3 border-end" class:d-none={!showSidebar}>
     {@html htmlContentTable}
+    <button
+      id="closeSidebarBtn"
+      class="btn btn-outline-dark bg-light position-absolute top-0 end-0 m-2" 
+      on:click={() => { showSidebar = false }}
+    >
+      <Icon name="x" />
+    </button>
   </div>
-  <section id="docs" class="position-relative p-4">
+  <section id="docs" class="position-relative col p-4">
     <a 
       href="https://github.com/johannchopin/restapify/edit/main/docs/README.md" 
       class="d-flex align-items-center position-absolute top-0 end-0 mt-4 me-4 btn btn-outline-dark"
@@ -134,6 +165,13 @@
     </a>
     {@html htmlContent}
   </section>
+  <button
+    id="toggleSidebarBtn"
+    class="btn btn-outline-dark bg-light position-absolute bottom-0 end-0 m-2" 
+    on:click={toggleSidebar}
+  >
+    <Icon name={showSidebar ? 'x' : 'list'} />
+  </button>
 </div>
 
 
