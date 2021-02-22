@@ -149,7 +149,7 @@
     {@html htmlContentTable}
     <button
       id="closeSidebarBtn"
-      class="btn btn-outline-dark bg-light position-absolute top-0 end-0 m-2" 
+      class="d-md-none btn btn-outline-dark bg-light position-absolute top-0 end-0 m-2" 
       on:click={() => { showSidebar = false }}
     >
       <Icon name="x" />
@@ -167,7 +167,7 @@
   </section>
   <button
     id="toggleSidebarBtn"
-    class="btn btn-outline-dark bg-light position-absolute bottom-0 end-0 m-2" 
+    class="d-md-none btn btn-outline-dark bg-light position-absolute bottom-0 end-0 m-2" 
     on:click={toggleSidebar}
   >
     <Icon name={showSidebar ? 'x' : 'list'} />
