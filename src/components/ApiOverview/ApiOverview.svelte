@@ -116,12 +116,12 @@
       <h5 class="mb-0 me-2">State:</h5>
       <li class="nav-item" role="presentation">
         <button class="nav-link active" id="tabs-default-tab" data-bs-toggle="tab" data-bs-target="#tabs-default" type="button" role="tab" aria-controls="tabs-default" aria-selected="true">
-          Default
+          _default
         </button>
       </li>
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="tabs-not-found-tab" data-bs-toggle="tab" data-bs-target="#tabs-not-found" type="button" role="tab" aria-controls="tabs-not-found" aria-selected="false">
-          INV_CRED
+          NOT_FOUND
         </button>
       </li>
     </ul>
@@ -157,10 +157,12 @@
     <ul class="nav nav-tabs mb-3 align-items-baseline" id="tabs-tab" role="tablist">
       <h5 class="mb-0 me-2">State:</h5>
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="tabs-del-user-default-tab" data-bs-toggle="tab" data-bs-target="#tabs-del-user-default" type="button" role="tab" aria-controls="tabs-del-user-default" aria-selected="true">Default</button>
+        <button class="nav-link active" id="tabs-del-user-default-tab" data-bs-toggle="tab" data-bs-target="#tabs-del-user-default" type="button" role="tab" aria-controls="tabs-del-user-default" aria-selected="true">_default</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="tabs-inv-cred-tab" data-bs-toggle="tab" data-bs-target="#tabs-inv-cred" type="button" role="tab" aria-controls="tabs-inv-cred" aria-selected="false">NOT_FOUND</button>
+        <button class="nav-link" id="tabs-inv-cred-tab" data-bs-toggle="tab" data-bs-target="#tabs-inv-cred" type="button" role="tab" aria-controls="tabs-inv-cred" aria-selected="false">
+          INV_CRED
+        </button>
       </li>
     </ul>
     <div class="tab-content" id="tabs-tabContent">
