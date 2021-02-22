@@ -154,6 +154,10 @@
     />
   </Route>
   <Route method="DELETE" slug="/users/:userid">
+    <div class="d-flex flex-column align-items-center">
+      <pre class="mb-0"><code class="text rounded-3">DELETE http://localhost:6767/api/users/42</code></pre>
+      <Icon name="arrow-bar-bottom" />
+    </div>
     <ul class="nav nav-tabs mb-3 align-items-baseline" id="tabs-tab" role="tablist">
       <h5 class="mb-0 me-2">State:</h5>
       <li class="nav-item" role="presentation">
