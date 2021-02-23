@@ -34,4 +34,4 @@ jobs:
           destination-repository-name: 'restapify'
           target-branch: 'website'
           user-email: johannchopin@pm.me
-          commit-message: '🚀 Deploy website'
+          commit-message: "🚀 Deploy website from restapify-website's action"
