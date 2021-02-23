@@ -112,10 +112,6 @@
       }
     }
 
-    :global(ul:first-of-type) {
-      display: none;
-    }
-
     :global(blockquote p) {
       margin: 0;
     }

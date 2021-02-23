@@ -25,11 +25,15 @@ const idLinkReplacerExt = {
   replace: ` href="docs#$1"`
 }
 
-export const getContentTableAsHtml = (md: string) => {
-  const mdList = md.substring(
-    md.lastIndexOf("<!-- START doctoc generated TOC please keep comment here to allow auto update -->"), 
-    md.lastIndexOf("<!-- END doctoc generated TOC please keep comment here to allow auto update -->")
+const getHtmlListFromDoc = (doc: string): string => {
+  return doc.substring(
+    doc.lastIndexOf("<!-- START doctoc generated TOC please keep comment here to allow auto update -->"), 
+    doc.lastIndexOf("<!-- END doctoc generated TOC please keep comment here to allow auto update -->")
   )
+}
+
+export const getContentTableAsHtml = (md: string) => {
+  const mdList = getHtmlListFromDoc(md)
 
   const converter = new showdown.Converter({ 
     disableForced4SpacesIndentedSublists: true,
@@ -42,7 +46,8 @@ export const getContentTableAsHtml = (md: string) => {
   return converter.makeHtml(mdList);
 }
 
-export const getDocsAsHtml = (md: string): string => {
+export const getDocsAsHtml = (doc: string): string => {
+  const docWithoutList = doc.replace(getHtmlListFromDoc(doc), '')
   const converter = new showdown.Converter({ 
     disableForced4SpacesIndentedSublists: true,
     ghCompatibleHeaderId: true,
@@ -52,5 +57,5 @@ export const getDocsAsHtml = (md: string): string => {
       idLinkReplacerExt
     ]
   });
-  return converter.makeHtml(md);
+  return converter.makeHtml(docWithoutList);
 }
