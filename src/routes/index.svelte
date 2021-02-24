@@ -1,7 +1,13 @@
 <script>
+  import { onMount } from "svelte"
+  import { initHighlightJs } from "../utils"
 	import Header from '../components/Header.svelte'
 	import Features from '../components/Features.svelte'
 	import GettingStarted from '../components/GettingStarted.svelte'
+
+	onMount(() => {
+    initHighlightJs()
+  })
 </script>
 
 <style>

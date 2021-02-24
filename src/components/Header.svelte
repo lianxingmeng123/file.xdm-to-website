@@ -1,7 +1,4 @@
 <script lang="ts">
-  import { onMount } from "svelte"
-  import { initHighlightJs } from "../utils"
-
   import bg from '../assets/restapify-icon-bg.svg'
 
   import Folder from './Folder.svelte'
@@ -119,10 +116,6 @@
         }
       }
     ];
-
-  onMount(() => {
-    initHighlightJs()
-  })
 </script>
 
 <style lang="scss">
