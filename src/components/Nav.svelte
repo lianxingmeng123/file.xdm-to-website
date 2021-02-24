@@ -46,7 +46,7 @@
 
 <nav class="navbar navbar-expand-lg px-md-4 pt-0 pb-0 navbar-light bg-light shadow">
   <div class="container-fluid">
-    <a id="brand" class="p-0 d-flex align-contents-center link-dark" href="/">
+    <a id="brand" rel="prefetch" class="p-0 d-flex align-contents-center link-dark" href="/">
 			<img src={restapifyIcon} alt="Restapify icon">
 			<h1 class="d-none d-md-block ms-1 mb-0 fs-4">Restapify</h1>
     </a>
