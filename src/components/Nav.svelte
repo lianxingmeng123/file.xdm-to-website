@@ -3,11 +3,18 @@
 </script>
 
 <style lang="scss">
+	.navbar {
+		position: relative;
+		display: inline-block;
+	}
+
 	h1 {
 		line-height: 2.5em;
 	}
 
 	#brand {
+		position: absolute;
+
 		img {
 			min-width: 7vw;
 		}
