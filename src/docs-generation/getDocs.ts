@@ -43,7 +43,7 @@ export const getContentTableAsHtml = (md: string) => {
     ]
   })
 
-  return converter.makeHtml(mdList);
+  return converter.makeHtml(mdList)
 }
 
 export const getDocsAsHtml = (doc: string): string => {
