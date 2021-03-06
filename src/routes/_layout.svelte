@@ -1,5 +1,7 @@
 <script lang="ts">
-	import Nav from '../components/Nav.svelte';
+	import Nav from '../components/Navbar.svelte'
+
+	export let segment
 </script>
 
 <style>
@@ -22,7 +24,7 @@
 	}
 </style>
 
-<Nav />
+<Nav {segment} />
 
 <svelte:head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js" integrity="sha512-zol3kFQ5tnYhL7PzGt0LnllHHVWRGt2bTCIywDiScVvLIlaDOVJ6sPdJTVi0m3rA660RT+yZxkkRzMbb1L8Zkw==" crossorigin="anonymous"></script>
