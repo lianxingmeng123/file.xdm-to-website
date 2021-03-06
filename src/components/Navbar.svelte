@@ -1,5 +1,7 @@
 <script>
   import restapifyIcon from '../assets/restapify-icon.svg'
+
+	export let segment
 </script>
 
 <style lang="scss">
@@ -20,11 +22,17 @@
 		}
 	}
 
+	.nav-link.active,
+	a:hover {
+		text-decoration: underline;
+	}
+
 	@media (min-width: 992px) { 
 		#brand img {
 			min-width: 5vw;
 		}
 	 }
+
 	@media (max-width: 767.98px) { 
 		#brand img {
 			min-width: 15vw;
@@ -59,7 +67,10 @@
     </a>
     <ul class="d-flex ms-auto mb-0">
       <li class="nav-item">
-        <a class="nav-link" rel="prefetch" href="/docs">Docs</a>
+        <a class="nav-link" class:active={segment === 'docs'} rel="prefetch" href="/docs">Docs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" class:active={segment === 'examples'} rel="prefetch" href="/examples">Examples</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="https://github.com/johannchopin/restapify" target="_blank">GitHub</a>
@@ -69,7 +80,7 @@
 					<img src="https://img.shields.io/codecov/c/github/johannchopin/restapify" target="_blank" alt="codecov">
 				</a>
       </li>
-			<li class="nav-item d-flex align-items-center">
+			<li class="nav-item d-none d-md-flex align-items-center">
 				<iframe src="https://ghbtns.com/github-btn.html?user=johannchopin&repo=restapify&type=star&count=true&v=2" frameborder="0" scrolling="0" width="100" height="20" title="GitHub"></iframe>
       </li>
     </ul>

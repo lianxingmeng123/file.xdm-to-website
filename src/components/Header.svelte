@@ -14,7 +14,6 @@
           { 
             type: 'file', 
             name: '*.json',
-            expended: true,
             content: [
               "#for i in range(5)",
               {
