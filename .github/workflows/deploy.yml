@@ -19,19 +19,9 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Build
+      - name: Deploy
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
           yarn install
-          yarn export
-
-      - name: Deploy to main repo
-        uses: cpina/github-action-push-to-another-repository@master
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: '__sapper__/export'
-          destination-github-username: 'johannchopin'
-          destination-repository-name: 'restapify'
-          target-branch: 'website'
-          user-email: johannchopin@pm.me
-          commit-message: "🚀 Deploy website from restapify-website's action"
+          yarn vercel -t "$API_TOKEN_GITHUB"
