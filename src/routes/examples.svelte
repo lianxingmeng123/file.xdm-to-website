@@ -21,7 +21,7 @@
 
 <section class="container py-5">
   <h1>Examples</h1>
-  <p>Explore some <a href="https://github.com/johannchopin/restapify-examples">examples</a> that describe the utilisation or Restapify in real projects:</p>
+  <p>Explore some <a href="https://github.com/johannchopin/restapify-examples">examples</a> that describe the use of Restapify in real projects:</p>
 
   <div class="row mt-5">
     <div class="col-md-8 w-100 d-md-flex justify-content-center">
