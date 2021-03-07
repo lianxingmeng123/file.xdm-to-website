@@ -19,6 +19,10 @@
   }
 </style>
 
+<svelte:head>
+	<title>Examples • Restapify</title>
+</svelte:head>
+
 <section class="container py-5">
   <h1>Examples</h1>
   <p>Explore some <a href="https://github.com/johannchopin/restapify-examples">examples</a> that describe the use of Restapify in real projects:</p>

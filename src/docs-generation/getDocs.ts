@@ -9,7 +9,8 @@ const classMap = {
   li: 'list-group-item',
   pre: 'rounded-2',
   blockquote: 'alert alert-warning',
-  table: 'table table-striped'
+  table: 'table table-striped',
+  img: 'w-100'
 }
 
 const classInjectionExt = Object.keys(classMap)

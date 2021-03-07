@@ -127,6 +127,13 @@
     width: 1.5em;
   }
 
+  @media (min-width: 769px) { 
+    #docs {
+      :global(img.w-100) {
+        width: 50%!important;
+      }
+    }
+  }
   @media (max-width: 768px) { 
     #sidebar {
       position: absolute;
