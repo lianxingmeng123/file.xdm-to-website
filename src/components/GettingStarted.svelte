@@ -13,7 +13,7 @@ rpfy.run()`
   <div class="col-md-8">
     <h2>Getting Started</h2>
     <h4 class="mt-5">Using the cli</h4>
-    <p>The simplest way to use Restapify is to use his <a href="/docs#cli">cli</a> ...</p>
+    <p>The simplest way to use Restapify is to use his <a href="/docs#cli">cli</a>...</p>
     <pre><code class="rounded-3 bash">yarn global add restapify
 # or npm install -g restapify</code></pre>
     <p>...and then serve your api folder:</p>

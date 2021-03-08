@@ -29,17 +29,6 @@
 </style>
 
 <div class="accordion bg-light" id="apiOverview">
-  <Route method="GET" slug="/me">
-    <RouteBody 
-      request="GET http://localhost:6767/api/me" 
-      response={stringify({
-        "firstname": "Janie",
-        "lastname": "Hermann",
-        "email": "Jo.Kessler@yahoo.com"
-      })} 
-  />
-  </Route>
-
   <Route method="GET" slug="/posts">
     <RouteBody
       request="GET http://localhost:6767/api/posts"
@@ -140,6 +129,7 @@
       </div>
     </div>
   </Route>
+
   <Route method="POST" slug="/users/:userid">
     <RouteBody 
       request="POST http://localhost:6767/api/users/42"
@@ -153,6 +143,7 @@
       })} 
     />
   </Route>
+
   <Route method="DELETE" slug="/users/:userid">
     <div class="d-flex flex-column align-items-center">
       <pre class="mb-0"><code class="text rounded-3">DELETE http://localhost:6767/api/users/42</code></pre>
@@ -183,6 +174,7 @@
       </div>
     </div>
   </Route>
+
   <Route method="GET" slug="/users/:userid/comments">
     <RouteBody 
       request="GET http://localhost:6767/api/users/42/comments"
@@ -205,5 +197,16 @@
         }
       ])} 
     />
+  </Route>
+
+  <Route method="GET" slug="/me">
+    <RouteBody 
+      request="GET http://localhost:6767/api/me" 
+      response={stringify({
+        "firstname": "Janie",
+        "lastname": "Hermann",
+        "email": "Jo.Kessler@yahoo.com"
+      })} 
+  />
   </Route>
 </div>
