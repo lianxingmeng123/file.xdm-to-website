@@ -9,11 +9,21 @@
       link: 'https://github.com/johannchopin/restapify-examples/tree/main/nextjs-animal-shelter-app',
       title: 'Animal shelter app with NextJS',
       description: 'Small project to demonstrate the use of Next.js with Restapify API mocker.'
+    },
+    {
+      link: 'https://github.com/johannchopin/restapify-examples/tree/main/website-homepage',
+      title: 'Mocked API example',
+      description: 'Implementation of the mocked API that you can see on the <a href="https://restapify.vercel.app/">Restapify\'s website</a>.'
     }
   ]
 </script>
 
 <style>
+  .container {
+    height: 100%;
+    overflow: auto;
+  }
+
   .card-text {
     color: black;
   }
@@ -28,7 +38,7 @@
   <p>Explore some <a href="https://github.com/johannchopin/restapify-examples">examples</a> that describe the use of Restapify in real projects:</p>
 
   <div class="row mt-5">
-    <div class="col-md-8 w-100 d-flex flex-column flex-md-row justify-content-center align-items-center">
+    <div class="col-md-8 w-100 d-flex flex-column flex-md-row justify-content-center align-items-flex-start">
       {#each PROJECTS as { link, title, description}}
         <div class="card border-primary mx-3 mb-3" style="max-width: 18rem;">
           <div class="card-body text-primary">
