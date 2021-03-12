@@ -13,7 +13,7 @@
         files: [
           { 
             type: 'file', 
-            name: '*.json',
+            name: '_.json',
             content: [
               "#for i in range(5)",
               {
@@ -32,7 +32,7 @@
         files: [
           { 
             type: 'file', 
-            name: '*.json',
+            name: '_.json',
             content: [
               "#for i in range([q:limit|25])",
               {
@@ -49,7 +49,7 @@
             files: [
               { 
                 type: 'file', 
-                name: '*.json',
+                name: '_.json',
                 content: {
                   id: "n:[userid]",
                   email: "[#faker:internet:email]"
@@ -57,17 +57,17 @@
               },
               { 
                 type: 'file', 
-                name: '*.404.{NOT_FOUND}.json',
+                name: '_.404.{NOT_FOUND}.json',
                 content: [null],
               },
               { 
                 type: 'file', 
-                name: '*.DELETE.401.{INV_CRED}.json',
+                name: '_.DELETE.401.{INV_CRED}.json',
                 content: [null],
               },
               { 
                 type: 'file', 
-                name: '*.DELETE.json',
+                name: '_.DELETE.json',
                 content: {
                   "#header": {
                     "Content-Type": "text/html; charset=UTF-8"
@@ -79,7 +79,7 @@
               },
               { 
                 type: 'file', 
-                name: '*.POST.201.json',
+                name: '_.POST.201.json',
                 content: {
                   success: true,
                   data: {
