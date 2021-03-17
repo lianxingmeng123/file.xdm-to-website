@@ -1,4 +1,6 @@
 <script>
+  import Footer from "../components/Footer.svelte";
+
   const PROJECTS =  [
     {
       link: 'https://github.com/johannchopin/restapify-examples/tree/main/github-api',
@@ -19,9 +21,13 @@
 </script>
 
 <style>
-  .container {
+  #content {
     height: 100%;
-    overflow: auto;
+    overflow: scroll;
+  }
+
+  .container {
+    min-height: 100vh;
   }
 
   .card-text {
@@ -33,24 +39,27 @@
 	<title>Examples • Restapify</title>
 </svelte:head>
 
-<section class="container py-5">
-  <h1>Examples</h1>
-  <p>Explore some <a href="https://github.com/johannchopin/restapify-examples">examples</a> that describe the use of Restapify in real projects:</p>
+<div id="content">
+  <section class="container py-5">
+    <h1>Examples</h1>
+    <p>Explore some <a href="https://github.com/johannchopin/restapify-examples">examples</a> that describe the use of Restapify in real projects:</p>
 
-  <div class="row mt-5">
-    <div class="col-md-8 w-100 d-flex flex-column flex-md-row justify-content-center align-items-flex-start">
-      {#each PROJECTS as { link, title, description}}
-        <div class="card border-primary mx-3 mb-3" style="max-width: 18rem;">
-          <div class="card-body text-primary">
-            <h5 class="card-title">
-              <a href={link} target="_blank">
-                {title}
-              </a>
-            </h5>
-            <p class="card-text">{ @html description}</p>
+    <div class="row mt-5">
+      <div class="col-md-8 w-100 d-flex flex-column flex-md-row justify-content-center align-items-flex-start">
+        {#each PROJECTS as { link, title, description}}
+          <div class="card border-primary mx-3 mb-3" style="max-width: 18rem;">
+            <div class="card-body text-primary">
+              <h5 class="card-title">
+                <a href={link} target="_blank">
+                  {title}
+                </a>
+              </h5>
+              <p class="card-text">{ @html description}</p>
+            </div>
           </div>
-        </div>
-      {/each}
+        {/each}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  <Footer />
+</div>

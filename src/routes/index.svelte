@@ -4,6 +4,7 @@
 	import Header from '../components/Header.svelte'
 	import Features from '../components/Features.svelte'
 	import GettingStarted from '../components/GettingStarted.svelte'
+	import Footer from '../components/Footer.svelte'
 
 	onMount(() => {
     initHighlightJs()
@@ -55,4 +56,5 @@
 		<hr />
 		<GettingStarted />
 	</section>
+	<Footer />
 </div>
