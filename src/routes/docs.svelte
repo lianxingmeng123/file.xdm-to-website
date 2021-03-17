@@ -15,6 +15,7 @@
   import { onMount } from "svelte"
   import { initHighlightJs } from "../utils"
   import Icon from '../components/Icon/Icon.svelte'
+  import Footer from "../components/Footer.svelte"
   import editIcon from '../assets/edit-icon.svg'
 
   export let htmlContent
@@ -158,7 +159,7 @@
       <Icon name="x" />
     </button>
   </div>
-  <section id="docs" class="position-relative col p-4">
+  <section id="docs" class="position-relative col ps-0">
     <a 
       href="https://github.com/johannchopin/restapify/edit/main/docs/README.md" 
       class="d-flex align-items-center position-absolute top-0 end-0 mt-4 me-4 btn btn-outline-dark"
@@ -166,7 +167,10 @@
       <img src={editIcon} alt="edit docs">
       <p class="m-0 ms-1">Edit on GitHub</p>
     </a>
-    {@html htmlContent}
+    <div class="p-4">
+      {@html htmlContent}
+    </div>
+    <Footer />
   </section>
   <button
     id="toggleSidebarBtn"
