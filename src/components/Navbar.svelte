@@ -1,4 +1,5 @@
 <script>
+	import Links from './Links.svelte'
   import restapifyIcon from '../assets/restapify-icon.svg'
 
 	export let segment
@@ -20,11 +21,6 @@
 		img {
 			min-width: 7vw;
 		}
-	}
-
-	.nav-link.active,
-	a:hover {
-		text-decoration: underline;
 	}
 
 	@media (min-width: 992px) { 
@@ -66,15 +62,7 @@
 			<h1 class="d-none d-md-block ms-1 mb-0 fs-4">Restapify</h1>
     </a>
     <ul class="d-flex ms-auto mb-0">
-      <li class="nav-item">
-        <a class="nav-link" class:active={segment === 'docs'} rel="prefetch" href="/docs">Docs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" class:active={segment === 'examples'} rel="prefetch" href="/examples">Examples</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://github.com/johannchopin/restapify" target="_blank">GitHub</a>
-      </li>
+			<Links {segment} />
 			<li class="nav-item d-none d-md-block ms-3">
 				<a class="nav-link" href="https://codecov.io/gh/johannchopin/restapify">
 					<img src="https://img.shields.io/codecov/c/github/johannchopin/restapify" target="_blank" alt="codecov">
