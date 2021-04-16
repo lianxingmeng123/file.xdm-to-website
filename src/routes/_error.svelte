@@ -1,4 +1,5 @@
 <script lang="ts">
+	import RedirectionMessage from '../components/RedirectionMessage.svelte'
 	export let status: number;
 	export let error: Error;
 
@@ -14,6 +15,7 @@
 		font-size: 2.8em;
 		font-weight: 700;
 		margin: 0 0 0.5em 0;
+		text-align: center;
 	}
 
 	p {
@@ -28,12 +30,14 @@
 </style>
 
 <svelte:head>
-	<title>{status}</title>
+	<title>Error {status} • Restapify</title>
 </svelte:head>
 
-<h1>{status}</h1>
+<h1 class="mt-5">Error {status}</h1>
 
-<p>{error.message}</p>
+{#if status === 404}
+	 <RedirectionMessage />
+{/if}
 
 {#if dev && error.stack}
 	<pre>{error.stack}</pre>
