@@ -126,6 +126,10 @@
       margin-top: 10vh
     }
 
+    #subtitle {
+      padding: 0 15%;
+    }
+
     #bg {
       position: absolute;
       top: -10%;
@@ -163,6 +167,10 @@
         width: auto;
       }
 
+      #subtitle {
+        padding: 0;
+      }
+
       #arrowSeparator {
         transform: rotate(90deg);
         margin: 1em 0;
@@ -171,12 +179,12 @@
   }
 </style>
 
-<header class="px-3 d-flex flex-column">
+<header class="px-3 d-flex flex-column justify-content-center">
   <img src={bg} id="bg" alt="Design colors" />
   <h1 class="text-center px-2 px-md-5">
     Quickly and easily deploy a mocked REST API
   </h1>
-  <p class="text-center fs-5 lh-sm">Save time on the development of your Frontend project by avoiding wasting it on the API mocking.</p>
+  <p id="subtitle" class="text-center fs-5 lh-sm">Save time on the development of your Frontend project by avoiding wasting it on the API mocking just by using an intuitive and developer friendly JSON file structure.</p>
   <Terminal class="mx-auto mt-5" content={`$ yarn global add restapify 
 # or npm install -g restapify
 $ restapify serve mockedApi/`} language="bash"/>
