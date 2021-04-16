@@ -2,6 +2,7 @@
 	import Nav from '../components/Navbar.svelte'
 
 	export let segment
+	const dev = process.env.NODE_ENV === 'development';
 </script>
 
 <style>
@@ -28,6 +29,18 @@
 
 <svelte:head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js" integrity="sha512-zol3kFQ5tnYhL7PzGt0LnllHHVWRGt2bTCIywDiScVvLIlaDOVJ6sPdJTVi0m3rA660RT+yZxkkRzMbb1L8Zkw==" crossorigin="anonymous"></script>
+
+	{#if !dev}
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-D7FP9VSLXX"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-D7FP9VSLXX');
+		</script>
+	{/if}
 </svelte:head>
 
 <main>
