@@ -13,7 +13,7 @@
     "compression": "^1.7.1",
     "highlight.js": "^10.6.0",
     "markdown-it": "^12.0.4",
-    "polka": "^1.0.0",
+    "polka": "next",
     "showdown": "^1.9.1",
     "sirv": "^1.0.0"
   },
