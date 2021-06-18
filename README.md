@@ -27,3 +27,4 @@ You can deploy your application to any environment that supports Node 10 or abov
 yarn global add vercel # or npm install -g vercel
 yarn deploy
 ```
+
