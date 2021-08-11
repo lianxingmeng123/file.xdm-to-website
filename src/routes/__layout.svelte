@@ -1,8 +1,9 @@
 <script lang="ts">
+	import { dev } from '$app/env';
+
 	import Nav from '../components/Navbar.svelte'
 
 	export let segment
-	const dev = process.env.NODE_ENV === 'development';
 </script>
 
 <style>

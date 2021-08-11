@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { goto } from '@sapper/app'
+  import { goto } from '$app/navigation'
 
   const SECONDS_BEFORE_REDIRECT = 6
   let counter = SECONDS_BEFORE_REDIRECT

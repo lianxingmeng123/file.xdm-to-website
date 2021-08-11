@@ -1,13 +1,20 @@
+<script context="module">
+	export function load({ error, status }) {
+		return {
+			props: { error, status }
+		};
+	}
+</script>
 <script lang="ts">
+	import { dev } from '$app/env';
+
 	import RedirectionMessage from '../components/RedirectionMessage.svelte'
 	export let status: number;
 	export let error: Error;
-
-	const dev = process.env.NODE_ENV === 'development';
 </script>
 
 <style>
-	h1, p {
+	h1 {
 		margin: 0 auto;
 	}
 
@@ -16,10 +23,6 @@
 		font-weight: 700;
 		margin: 0 0 0.5em 0;
 		text-align: center;
-	}
-
-	p {
-		margin: 1em auto;
 	}
 
 	@media (min-width: 480px) {
