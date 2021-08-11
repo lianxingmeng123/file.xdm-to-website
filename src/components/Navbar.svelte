@@ -9,7 +9,6 @@
 	.navbar {
 		position: relative;
 		display: block;
-		background-color: red!important;
 	}
 
 	h1 {
