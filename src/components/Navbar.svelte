@@ -8,7 +8,7 @@
 <style lang="scss">
 	.navbar {
 		position: relative;
-		display: inline-block;
+		display: block;
 	}
 
 	h1 {
@@ -19,19 +19,7 @@
 		position: absolute;
 
 		img {
-			min-width: 7vw;
-		}
-	}
-
-	@media (min-width: 992px) { 
-		#brand img {
-			min-width: 5vw;
-		}
-	 }
-
-	@media (max-width: 767.98px) { 
-		#brand img {
-			min-width: 15vw;
+			width: 60px;
 		}
 	}
 
