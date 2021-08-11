@@ -1,13 +1,13 @@
 <script context="module">
   import { getDocsAsHtml, getContentTableAsHtml, DOCS_URL } from "../docs-generation/getDocs";
 
-  export async function preload(page) {
-    const response = await this.fetch(DOCS_URL)
+  export async function load({ fetch }) {
+    const response = await fetch(DOCS_URL)
     const inlineMd = await response.text()
     const htmlContentTable = getContentTableAsHtml(inlineMd)
 		const htmlContent = getDocsAsHtml(inlineMd)
 
-		return { htmlContent, htmlContentTable };
+		return { props: { htmlContent, htmlContentTable }}
 	}
 </script>
 
@@ -56,7 +56,7 @@
 		overflow: auto;
     padding-right: 1rem;
 
-    :global(a) {
+    & :global(a) {
       white-space: nowrap;
       color: black;
       text-decoration: none;

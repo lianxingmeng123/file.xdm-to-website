@@ -24,8 +24,6 @@
 	<meta name="twitter:description" content="Restapify is a tool that allows you to quickly and easily deploy a local REST API by using an intuitive and developer friendly JSON file structure.">
 	<meta name="twitter:image" content="presentation-image.png">
 
-	%sapper.base%
-
 	<link rel="stylesheet" href="global.css">
 	<link rel="stylesheet" href="global.bundle.css">
 	<link rel="manifest" href="manifest.json" crossorigin="use-credentials">
@@ -34,23 +32,11 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 
-	<!-- Sapper creates a <script> tag containing `src/client.js`
-	     and anything else it needs to hydrate the app and
-	     initialise the router -->
-	%sapper.scripts%
-
-	<!-- Sapper generates a <style> tag containing critical CSS
-	     for the current page. CSS for the rest of the app is
-	     lazily loaded when it precaches secondary pages -->
-	%sapper.styles%
-
 	<!-- This contains the contents of the <svelte:head> component, if
 	     the current page has one -->
-	%sapper.head%
+	%svelte.head%
 </head>
 <body>
-	<!-- The application will be rendered inside this element,
-	     because `src/client.js` references it -->
-	<div id="sapper">%sapper.html%</div>
+	<div id="root">%svelte.body%</div>
 </body>
 </html>
