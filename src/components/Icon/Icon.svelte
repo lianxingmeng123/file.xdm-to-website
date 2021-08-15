@@ -1,3 +1,7 @@
+<script lang="ts" context="module">
+  export type Name = 'link' | 'github' | 'circle-half' | 'close' | 'book' | 'eye' | 'folder' | 'folder-open' | 'file-code' | 'arrow-bar-bottom' | 'file-earmark-text' | 'arrow-right' | 'x' | 'list' | 'codesandbox' | 'stackblitz'
+</script>
+
 <script lang="ts">
   import link from './icons/link.svg'
   import github from './icons/github.svg'
@@ -13,19 +17,22 @@
   import arrowRight from './icons/arrowRight.svg'
   import x from './icons/x.svg'
   import list from './icons/list.svg'
+  import codesandbox from './icons/codesandbox.svg'
+  import stackblitz from './icons/stackblitz.svg'
 
   let className = ''
 
-  type Name = 'link' | 'github' | 'circle-half' | 'close' | 'book' | 'eye' | 'folder' | 'folder-open' | 'file-code' | 'arrow-bar-bottom' | 'file-earmark-text' | 'arrow-right' | 'x' | 'list'
 
   export let name: Name = 'github'
   export { className as class }
+  export let style
 
   const icons: {[name in Name]: any} = {
     'circle-half': circleHalf,
     link,
     github,
     close,
+    codesandbox,
     book,
     eye,
     folder,
@@ -34,6 +41,7 @@
     'arrow-bar-bottom': arrowBarBottom,
     'file-earmark-text': fileEarmarkText,
     'arrow-right': arrowRight,
+    stackblitz,
     x,
     list
   }
@@ -46,4 +54,4 @@
   }
 </style>
 
-<img src={icons[name]} class={`icon ${className}`} alt={`Icon ${name}`} />
+<img src={icons[name]} class={`icon ${className}`} alt={`Icon ${name}`} {style} />
