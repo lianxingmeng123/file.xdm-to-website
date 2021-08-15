@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
+  import { onMount, onDestroy } from 'svelte'
   import { goto } from '$app/navigation'
 
   const SECONDS_BEFORE_REDIRECT = 6
   let counter = SECONDS_BEFORE_REDIRECT
+  let counterInterval
 
   onMount(() => {
-    setInterval(() => {
+    counterInterval = setInterval(() => {
       if (counter <= 1) {
         goto('/')
       } else {
@@ -14,6 +15,10 @@
       }
     }, 1000)
 	})
+
+  onDestroy(() => {
+    clearInterval(counterInterval)
+  })
 </script>
 
 <style>

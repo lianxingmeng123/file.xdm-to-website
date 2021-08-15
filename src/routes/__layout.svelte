@@ -7,6 +7,33 @@
 </script>
 
 <style>
+	:global(html, body) {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	:global(body) {
+		margin: 0;
+		font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+		font-size: 14px;
+		line-height: 1.5;
+		color: #333;
+	}
+
+	:global(#root) {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
+
+	@media (min-width: 400px) {
+		:global(body) {
+			font-size: 16px;
+		}
+	}
 	main {
 		position: relative;
 		margin: 0 auto;

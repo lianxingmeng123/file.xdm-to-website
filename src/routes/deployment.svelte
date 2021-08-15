@@ -2,7 +2,7 @@
   import Documentation from '../components/Documentation.svelte'
 
   export async function load({ fetch }) {
-    const response = await fetch('https://raw.githubusercontent.com/johannchopin/restapify/main/docs/README.md')
+    const response = await fetch('https://raw.githubusercontent.com/johannchopin/restapify/main/docs/deployment/README.md')
     const inlineMd = await response.text()
     
 		return { props: { inlineMd }}
@@ -14,8 +14,8 @@
 </script>
 
 <Documentation
-  pageSlug='/docs'
-  pageTitle='Docs • Restapify'
+  pageSlug='/deployment'
+  pageTitle='Deployment • Restapify'
   markdown={inlineMd} 
-  editUrl='https://github.com/johannchopin/restapify/edit/main/docs/README.md' 
+  editUrl='https://github.com/johannchopin/restapify/edit/main/docs/deployment/README.md' 
 />
