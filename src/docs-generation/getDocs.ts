@@ -1,7 +1,5 @@
 import showdown from "showdown"
 
-export const DOCS_URL = 'https://raw.githubusercontent.com/johannchopin/restapify/main/docs/README.md'
-
 const classMap = {
   h3: 'mt-5',
   h4: 'mt-4',
