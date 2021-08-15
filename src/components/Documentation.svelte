@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { getDocsAsHtml, getContentTableAsHtml } from "../docs-generation/getDocs";
   import { onMount } from "svelte"
   import { initHighlightJs } from "../utils"
@@ -6,11 +6,13 @@
   import Footer from "../components/Footer.svelte"
   import editIcon from '../assets/edit-icon.svg'
 
-	export let markdown
-  export let editUrl
+	export let markdown: string
+  export let pageSlug: string
+  export let editUrl: string
+  export let pageTitle: string
 
-  const htmlContentTable = getContentTableAsHtml(markdown)
-  const htmlContent = getDocsAsHtml(markdown)
+  const htmlContentTable = getContentTableAsHtml(markdown, { pageSlug })
+  const htmlContent = getDocsAsHtml(markdown, { pageSlug })
 
   let showSidebar = true
   
@@ -36,7 +38,7 @@
 </script>
 
 <svelte:head>
-	<title>Docs • Restapify</title>
+	<title>{pageTitle}</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/zenburn.min.css" integrity="sha512-JPxjD2t82edI35nXydY/erE9jVPpqxEJ++6nYEoZEpX2TRsmp2FpZuQqZa+wBCen5U16QZOkMadGXHCfp+tUdg==" crossorigin="anonymous" />
 </svelte:head>
 

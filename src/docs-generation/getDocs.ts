@@ -18,10 +18,12 @@ const classInjectionExt = Object.keys(classMap)
     replace: `<${key} class="${classMap[key]}" $1>`
   }));
 
-const idLinkReplacerExt = {
-  type: 'output',
-  regex: new RegExp(` href="#(.*)"`, 'g'),
-  replace: ` href="docs#$1"`
+const getIdLinkReplacerExt = (pageSlug: string) => {
+  return {
+    type: 'output',
+    regex: new RegExp(` href="#(.*)"`, 'g'),
+    replace: ` href="${pageSlug}#$1"`
+  }
 }
 
 const getHtmlListFromDoc = (doc: string): string => {
@@ -31,21 +33,21 @@ const getHtmlListFromDoc = (doc: string): string => {
   )
 }
 
-export const getContentTableAsHtml = (md: string) => {
+export const getContentTableAsHtml = (md: string, params: { pageSlug: string }) => {
   const mdList = getHtmlListFromDoc(md)
 
   const converter = new showdown.Converter({ 
     disableForced4SpacesIndentedSublists: true,
     ghCompatibleHeaderId: true,
     extensions: [
-      idLinkReplacerExt
+      getIdLinkReplacerExt(params.pageSlug)
     ]
   })
 
   return converter.makeHtml(mdList)
 }
 
-export const getDocsAsHtml = (doc: string): string => {
+export const getDocsAsHtml = (doc: string, params: { pageSlug: string }): string => {
   const docWithoutList = doc.replace(getHtmlListFromDoc(doc), '')
   const converter = new showdown.Converter({ 
     disableForced4SpacesIndentedSublists: true,
@@ -53,7 +55,7 @@ export const getDocsAsHtml = (doc: string): string => {
     tables: true,
     extensions: [
       classInjectionExt,
-      idLinkReplacerExt
+      getIdLinkReplacerExt(params.pageSlug)
     ]
   });
   return converter.makeHtml(docWithoutList);

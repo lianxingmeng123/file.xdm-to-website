@@ -13,4 +13,9 @@
   export let inlineMd
 </script>
 
-<Documentation markdown={inlineMd} editUrl='https://github.com/johannchopin/restapify/edit/main/docs/README.md' />
+<Documentation
+  pageSlug='/docs'
+  pageTitle='Docs • Restapify'
+  markdown={inlineMd} 
+  editUrl='https://github.com/johannchopin/restapify/edit/main/docs/README.md' 
+/>
