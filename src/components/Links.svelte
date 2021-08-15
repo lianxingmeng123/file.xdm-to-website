@@ -25,6 +25,9 @@
   <a class="nav-link" class:active={segment === 'docs'} rel="prefetch" href="/docs">Docs</a>
 </li>
 <li class="nav-item">
+  <a class="nav-link" class:active={segment === 'deployment'} rel="prefetch" href="/deployment">Deployment</a>
+</li>
+<li class="nav-item">
   <a class="nav-link" class:active={segment === 'examples'} rel="prefetch" href="/examples">Examples</a>
 </li>
 <li class="nav-item">
