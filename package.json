@@ -6,7 +6,7 @@
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "export": "svelte-kit build",
-    "start": "node __sapper__/build",
+    "start": "node build",
     "deploy": "yarn vercel",
     "preview": "svelte-kit preview",
     "validate": "svelte-check --ignore src/node_modules/@sapper"
