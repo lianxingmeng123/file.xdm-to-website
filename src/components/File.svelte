@@ -1,8 +1,8 @@
 <script>
-  import { onMount } from "svelte"
+  import { onMount } from 'svelte'
   import { initHighlightJs } from "../utils"
   import Terminal from './Terminal.svelte'
-	import Icon from './Icon/Icon.svelte';
+	import Icon from './Icon/Icon.svelte'
 
   import arrowIcon from '../assets/arrow-90deg-down.svg'
 

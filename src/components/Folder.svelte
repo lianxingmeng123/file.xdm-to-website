@@ -1,4 +1,6 @@
 <script>
+  import { slide } from 'svelte/transition'
+
 	import File from './File.svelte';
 	import Icon from './Icon/Icon.svelte';
 
@@ -25,7 +27,7 @@
 		padding: 0.2em 0 0 0.5em;
 		margin: 0 0 0 0.4em;
 		list-style: none;
-		border-left: 2px solid black;
+		border-left: 1px solid #b3b3b3;
 	}
 
 	li {
@@ -41,11 +43,11 @@
 {#if expanded}
 	<ul>
 		{#each files as {type, ...file}}
-			<li>
+			<li transition:slide>
 				{#if type === 'folder'}
 					<svelte:self {...file}/>
 				{:else}
-					<File {...file}/>
+					<File {...file} />
 				{/if}
 			</li>
 		{/each}
